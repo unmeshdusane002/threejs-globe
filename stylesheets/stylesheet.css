@@ -11,6 +11,7 @@ body {
 
 #selectTexture {
   text-align: center;
+  margin-top: 10px;
 }
 #selectTexture ul {
   margin: 0 auto;
@@ -24,6 +25,9 @@ body {
 }
 #selectTexture h4 {
   font-size: 18px;
+}
+#selectTexture a {
+  padding: 2px 5px;
 }
 a {
   color: #1e6bb8;
