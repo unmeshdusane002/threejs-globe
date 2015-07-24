@@ -8,6 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
   </head>
   <body>
     <section class="page-header">
@@ -18,7 +19,8 @@
       <a href="https://github.com/ajaykumaryadav/threejs-globe/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
-    <section class="main-content">
+    <section class="main-content" id="main-content">
+      <a href="javascript:void(0);" id="selectImgTexture">Another texture</a>
       <div id='canvas'></div>
 
       <footer class="site-footer">
@@ -32,5 +34,5 @@
     <script src="js/three.js"></script>
     <script src="js/TrackballControls.js"></script>
     <script src="js/globe.js"></script>
-  </body>
+</body>
 </html>

@@ -31,7 +31,7 @@
       material = new THREE.MeshBasicMaterial({
           map: THREE.ImageUtils.loadTexture('img/globe-2.jpg'),
           overdraw: true
-      })
+      });
 
       mesh = new THREE.Mesh(geometry, material);
 
@@ -57,3 +57,15 @@
       mesh.rotation.y += 0.002;
       renderer.render(scene, camera);
   }
+
+  function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    render();
+  }
+
+  document.getElementById('selectImgTexture').onclick = function() {
+      mesh.material.map = THREE.ImageUtils.loadTexture("img/globe-1.jpg" );
+      mesh.material.needsUpdate = true;
+  };
