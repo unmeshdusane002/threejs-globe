@@ -28,10 +28,10 @@
       // Parameter 3 : segmentsHeight
       geometry = new THREE.SphereGeometry(40, 60, 24);
 
-      // material = new THREE.MeshBasicMaterial({
-      //     map: THREE.ImageUtils.loadTexture('img/earthTexture.jpg'),
-      //     overdraw: true
-      // });
+      material = new THREE.MeshBasicMaterial({
+          map: THREE.ImageUtils.loadTexture('img/earthTexture.jpg'),
+          overdraw: true
+      });
 
       mesh = new THREE.Mesh(geometry, material);
 
