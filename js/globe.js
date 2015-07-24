@@ -65,9 +65,15 @@
     render();
   }
 
-  var texture = ["img/globe-1.jpg","img/globe-2.jpg","img/globe-3.jpg","img/earth.jpg","img/taj-mahel.jpg"];
+  var texture = [
 
-  $(document).on("change","#selectTexture",function(){
-    mesh.material.map = THREE.ImageUtils.loadTexture(texture[parseInt(this.value)-1]);
+
+
+
+
+];
+
+  $(document).on("change","#selectTexture a",function(){
+    mesh.material.map = THREE.ImageUtils.loadTexture($(this).attr("data-texture"));
     mesh.material.needsUpdate = true;
   });
