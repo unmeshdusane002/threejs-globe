@@ -18,7 +18,7 @@
       scene.add(camera);
 
       // Step 3 : Add Controlls
-      controls = new THREE.TrackballControls( camera,canvas );
+      controls = new THREE.TrackballControls( camera );
       controls.damping = 0.2;
       controls.addEventListener( 'change', render );
 
