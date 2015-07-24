@@ -29,7 +29,7 @@
       geometry = new THREE.SphereGeometry(40, 60, 24);
 
       material = new THREE.MeshBasicMaterial({
-          map: THREE.ImageUtils.loadTexture('img/globe-2.jpg'),
+          map: THREE.ImageUtils.loadTexture('img/earthTexture.jpg'),
           overdraw: true
       });
 
@@ -65,7 +65,9 @@
     render();
   }
 
-  document.getElementById('selectImgTexture').onclick = function() {
-      mesh.material.map = THREE.ImageUtils.loadTexture("img/globe-1.jpg" );
-      mesh.material.needsUpdate = true;
-  };
+  var texture = ["img/globe-1.jpg","img/globe-2.jpg","img/globe-3.jpg","img/earth.jpg","img/taj-mahel.jpg"];
+
+  $(document).on("change","#selectTexture",function(){
+    mesh.material.map = THREE.ImageUtils.loadTexture(texture[parseInt(this.value)-1]);
+    mesh.material.needsUpdate = true;
+  });
