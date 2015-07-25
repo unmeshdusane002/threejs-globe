@@ -2,8 +2,10 @@
 
   var canvas = document.getElementById('canvas');
 
+  var height = 600,
+      width = 940;
+
   init();
-  window.addEventListener( 'resize', onWindowResize, false );
   animate();
 
   function init() {
@@ -11,7 +13,7 @@
       scene = new THREE.Scene();
 
       // Step 2 : Add Camera
-      camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 1, 10000);
+      camera = new THREE.PerspectiveCamera(25, width / height, 1, 10000);
       camera.position.z = 250;
       scene.add(camera);
 
@@ -38,7 +40,7 @@
       // Step 5 : Add Renderer
       //renderer = new THREE.CanvasRenderer();
       renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(width, height);
 
       canvas.appendChild(renderer.domElement);
   }
@@ -53,7 +55,6 @@
   function render() {
       //mesh.rotation.x += 0.005;
       mesh.rotation.y += 0.002;
-
       renderer.render(scene, camera);
   }
 
@@ -64,9 +65,11 @@
     render();
   }
 
-  var texture = ["img/globe-1.jpg","img/globe-2.jpg","img/globe-3.jpg","img/earth.jpg","img/taj-mahel.jpg"];
-
-  $(document).on("change","#selectTexture",function(){
+  $(document).on("click","#selectTexture a",function(){
+    mesh.material.map = THREE.ImageUtils.loadTexture($(this).attr("data-texture"));
+    mesh.material.needsUpdate = true;
+  });
+(document).on("change","#selectTexture",function(){
     mesh.material.map = THREE.ImageUtils.loadTexture(texture[parseInt(this.value)-1]);
     mesh.material.needsUpdate = true;
   });
