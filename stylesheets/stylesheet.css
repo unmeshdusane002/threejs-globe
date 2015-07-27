@@ -8,27 +8,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #606c71; }
-
-#selectTexture {
-  text-align: center;
-  margin-top: 10px;
-}
-#selectTexture ul {
-  margin: 0 auto;
-  display: inline-block;
-  list-style: none;
-  text-align: center;
-}
-#selectTexture li {
-  float: left;
-  margin-right: 10px;
-}
-#selectTexture h4 {
-  font-size: 18px;
-}
-#selectTexture a {
-  padding: 2px 5px;
-}
 a {
   color: #1e6bb8;
   text-decoration: none; }
